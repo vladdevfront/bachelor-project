@@ -45,7 +45,7 @@ Instead of working with complex numbers like FFT, NTT operates entirely in finit
 
 This script runs a demonstration with:
 
-- A random input vector `a` of length `N = 8`
+- A random input vector `a` of length `N = 8`, `N` must be a power of 2 for the Cooley–Tukey algorithm to work correctly.
 - Automatically selected modulus `p`
 - Automatically found primitive root `ω`
 - Comparison of naive and fast NTT results
