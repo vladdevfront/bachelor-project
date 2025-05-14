@@ -79,11 +79,11 @@ No external dependencies are required. This project runs on standard Python 3.
 
 ## 🚀 How to Run
 
-1. Save the code to a Python file, e.g., `ntt_demo.py`.
+1. Save the code to a Python file, e.g., `NTT_project/ntt.py`.
 2. Run it with:
 
 ```bash
-python ntt_demo.py
+python ntt.py
 ```
 
 ---
@@ -93,13 +93,6 @@ python ntt_demo.py
 - **Naive NTT:** O(n²) — slower, educational purpose
 - **Cooley-Tukey NTT:** O(n log n) — recommended for large input sizes
 
----
-
-## 🛠️ Applications
-
-- Polynomial multiplication in cryptography (e.g., NTRU, RLWE)
-- Error-correcting codes
-- Fast convolution in modular arithmetic settings
 
 
 
