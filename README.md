@@ -1,5 +1,4 @@
 # Number Theoretic Transform (NTT) in Python
-# Number Theoretic Transform (NTT) in Python
 
 This project implements the **Number Theoretic Transform (NTT)** and its inverse in Python, using both a **naive O(n²)** method and the optimized **Cooley-Tukey O(n log n)** algorithm. It also includes utility functions to find a suitable prime modulus and a primitive root of unity.
 
