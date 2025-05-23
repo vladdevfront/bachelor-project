@@ -67,7 +67,7 @@ def cooley_tukey_ntt(a: List[int], omega: int, modulus: int) -> List[int]:
         factor = (factor * omega) % modulus
     return out
   
-#INVERZNA VERZIA NTT COOLEY-TUKEY
+#INVERZNA VERZIA NTT COOLEY-TUKEY O(n log n)
 def inverse_ntt(a, omega, modulus):
     n = len(a)
     omega_inv = pow(omega, -1, modulus)
@@ -78,10 +78,10 @@ def inverse_ntt(a, omega, modulus):
 
 # ==== RUN ====
 # N - DLZKA VEKTORA(POLYNOMU)
-N = 4  
+N = 4
 
 MODULUS = choose_modulus(N)
-VECTOR = [random.randint(0, MODULUS - 1) for _ in range(N)]
+VECTOR = [3,0,2,4]
 
 omega = find_omega(N, MODULUS)
 print("ω =", omega)
@@ -94,14 +94,16 @@ print("Cooley-Tukey NTT result:", ct_result)
 print("Equal?                  ", naive_result == ct_result)
 
 
-
+#MERANIE CASU
 print("\nCasova dlžka výpočtu:")
-print("Naive NTT:", timeit.timeit(lambda: naive_ntt(VECTOR,omega,MODULUS), number=100))
-print("Cooley-Tukey NTT:", timeit.timeit(lambda: cooley_tukey_ntt(VECTOR,omega,MODULUS), number=100))
+print("Naive NTT:", round(timeit.timeit(lambda: naive_ntt(VECTOR,omega,MODULUS), number=1000),7))
+print("Cooley-Tukey NTT:", round(timeit.timeit(lambda: cooley_tukey_ntt(VECTOR,omega,MODULUS), number=1000),7))
 
 
 
 
 res = inverse_ntt(ct_result, omega, MODULUS)
+
 print("INV Cooley-Tukey NTT:", res)
 
+print("Equal after inversing?:", VECTOR == res)
