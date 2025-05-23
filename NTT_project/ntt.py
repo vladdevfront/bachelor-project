@@ -81,7 +81,7 @@ def inverse_ntt(a, omega, modulus):
 N = 4
 
 MODULUS = choose_modulus(N)
-VECTOR = [3,0,2,4]
+VECTOR = [random.randint(0, MODULUS - 1) for _ in range(N)]
 
 omega = find_omega(N, MODULUS)
 print("ω =", omega)
